@@ -1,0 +1,17 @@
+﻿  Ball.cpp
+  Brick.cpp
+  Paddle.cpp
+  Game.cpp
+  Level.cpp
+src\level\Level.cpp(13): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Main.cpp
+  Collisions.cpp
+  FontManager.cpp
+  SoundManager.cpp
+  TextureManager.cpp
+  MenuState.cpp
+  PlayState.cpp
+  Generating code
+  All 1194 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Starbud.vcxproj -> C:\Users\Justin\Documents\Visual Studio 2017\Projects\Starbud\Release\Starbud.exe
