@@ -1,8 +1,8 @@
 #pragma once
 
 //App Information
-#define APP_TITLE "Project Starbud"
-#define APP_VERSION "Version 0.1a"
+#define APP_TITLE "Ultra Breakout"
+#define APP_VERSION "Version 0.1"
 #define APP_AUTHOR "Justin A. Symmank"
 
 //App Parameters

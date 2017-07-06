@@ -10,6 +10,7 @@ Game::Game()
 	m_window.create(sf::VideoMode(APP_WIDTH, APP_HEIGHT), APP_TITLE, sf::Style::Close, settings);
 	m_window.setKeyRepeatEnabled(false);
 	m_window.requestFocus();
+	//m_window.setVerticalSyncEnabled(true);
 
 	loadTextures();
 	loadAudio();
@@ -47,6 +48,7 @@ void Game::loadFonts()
 	FontManager::loadFont("aw", "Audiowide-Regular.ttf");
 	FontManager::loadFont("pixel", "PixelSplitter-Bold.ttf");
 	FontManager::loadFont("roses", "RosesareFF0000.ttf");
+	FontManager::loadFont("home", "homespun.ttf");
 }
 
 

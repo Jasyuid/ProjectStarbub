@@ -4,12 +4,14 @@ void Ball::update(const float dt)
 {
 	if (startTimer < startDelay) {
 		startTimer += dt;
-		if(startTimer > 2.0) setColor(sf::Color(0, 255, 255, 255));
-		else if(startTimer > 1.5) setColor(sf::Color(0, 255, 255, 0));
-		else if(startTimer > 1.0) setColor(sf::Color(0, 255, 255, 255));
-		else if(startTimer > 0.5) setColor(sf::Color(0, 255, 255, 0));
+		if(startTimer > 2.0) setColor(sf::Color(255, 255, 255, 255));
+		else if(startTimer > 1.5) setColor(sf::Color(255, 255, 255, 0));
+		else if(startTimer > 1.0) setColor(sf::Color(255, 255, 255, 255));
+		else if(startTimer > 0.5) setColor(sf::Color(255, 255, 255, 0));
 		return;
 	}
+	
+	speed = level->ballSpeed;
 
 	move(speed*cos(Math::degToRad(angle))*dt, vDir*speed*sin(Math::degToRad(angle))*dt);
 
@@ -44,17 +46,15 @@ void Ball::handleInput(sf::Event& event)
 
 }
 
-void Ball::collides(Entity& entity, bool side)
+void Ball::collides(Entity& entity, int side)
 {
 	if (typeid(entity) == typeid(Paddle))
 	{
-		if (side) return;
-		if (getPosition().y + getHeight() > entity.getPosition().y + entity.getHeight() / 2) return;
+		if (side != COL_BOTTOM) return;
 		if (getPosition().y + getHeight() - entity.getPosition().y - entity.getHeight()/2 > 0 && vDir == -1) return;
-		if (!side) {
-			vDir = -1;
-			setPosition(getPosition().x, level->paddleY - getHeight());
-		}
+		
+		vDir = -1;
+		setPosition(getPosition().x, level->paddleY - getHeight());
 		float d = (entity.getPosition().x + entity.getWidth() / 2) - (getPosition().x + getWidth() / 2);
 		d /= entity.getWidth() / 2;
 		angle = 60 * d + 90;
@@ -63,8 +63,8 @@ void Ball::collides(Entity& entity, bool side)
 	{
 		if (!hit)
 		{
-			if (!side) vDir = -vDir;
-			if (side) angle = 180 - angle;
+			if (side == COL_TOP || side == COL_BOTTOM) vDir = -vDir;
+			if (side == COL_LEFT || side == COL_RIGHT) angle = 180 - angle;
 			hit = true;
 		}
 	}
@@ -75,7 +75,7 @@ Ball::Ball(Level* level)
 {
 	this->level = level;
 
-	speed = 200;
+	speed = level->ballSpeed;
 	angle = 60;
 	vDir = 1;
 	hit = false;
@@ -86,5 +86,5 @@ Ball::Ball(Level* level)
 	setTexture(TextureManager::getRef("1x1"));
 	setScale(5, 5);
 	setPosition((APP_WIDTH - getWidth()) / 2, level->ballSpawnY);
-	setColor(sf::Color(0, 255, 255, 255));
+	setColor(sf::Color(255, 255, 255, 255));
 }

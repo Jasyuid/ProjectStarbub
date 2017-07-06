@@ -1,6 +1,6 @@
 #include "Collisions.h"
 
-Collisions::Side Collisions::pixelPerfectTest(const Entity& a, const Entity& b)
+int Collisions::pixelPerfectTest(const Entity& a, const Entity& b)
 {
 	//Rectangles around each entity
 	sf::IntRect rectA = a.getTextureRect();
@@ -16,18 +16,22 @@ Collisions::Side Collisions::pixelPerfectTest(const Entity& a, const Entity& b)
 
 	sf::IntRect overlap;
 
+
+
 	//Collision direction calculation
 	if (rectA.intersects(rectB, overlap))
 	{
 		if (overlap.width > overlap.height)
 		{
-			return VERTICAL;
+			if (rectA.top > rectB.top) return COL_TOP;
+			else return COL_BOTTOM;
 		}
 		else
 		{
-			return HORIZONTAL;
+			if (rectA.left > rectB.left) return COL_LEFT;
+			else return COL_RIGHT;
 		}
 	}
 
-	return NONE;
+	return COL_NONE;
 }

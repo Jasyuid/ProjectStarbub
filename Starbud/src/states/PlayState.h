@@ -9,6 +9,8 @@
 #include "../gui/TextMenu.h"
 #include "../resources/SmartText.h"
 
+class Level;
+
 class PlayState : public GameState
 {
 public:
@@ -21,11 +23,7 @@ public:
 private:
 	sf::View view;
 
+public:
 	Level* level;
-
-	sf::RectangleShape gameoverBG;
-	sf::Text gameoverText;
-	TextMenu* gameoverMenu;
-	sf::Text playText, menuText, exitText;
 
 };

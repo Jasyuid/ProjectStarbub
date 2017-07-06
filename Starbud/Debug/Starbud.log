@@ -1,3 +1,21 @@
 ﻿  Game.cpp
+  Generating Code...
+  Compiling...
+  PlayState.cpp
+c:\users\justin\documents\visual studio 2017\projects\starbud\starbud\src\states\playstate.cpp(24): warning C4065: switch statement contains 'default' but no 'case' labels
+  MenuState.cpp
+  TextureManager.cpp
+  SoundManager.cpp
+  FontManager.cpp
+  Collisions.cpp
+  Level.cpp
+  TextMenu.cpp
+c:\users\justin\documents\visual studio 2017\projects\starbud\starbud\src\gui\textmenu.cpp(11): warning C4018: '>=': signed/unsigned mismatch
+c:\users\justin\documents\visual studio 2017\projects\starbud\starbud\src\gui\textmenu.cpp(49): warning C4018: '<': signed/unsigned mismatch
+  Paddle.cpp
+  Brick.cpp
+  Ball.cpp
+  Main.cpp
+  Generating Code...
   Starbud.vcxproj -> C:\Users\Justin\Documents\Visual Studio 2017\Projects\Starbud\Debug\Starbud.exe
   Starbud.vcxproj -> C:\Users\Justin\Documents\Visual Studio 2017\Projects\Starbud\Debug\Starbud.pdb (Partial PDB)

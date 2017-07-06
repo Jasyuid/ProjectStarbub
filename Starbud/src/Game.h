@@ -27,7 +27,7 @@ public:
 	~Game(); //Unloads all states and assets
 
 	GameState* peekState(); //Returns the current state
-	void pushState(GameState* state); //Sets the new current state
+	void pushState(GameState* state); //Sets the new current state 
 	void popState(); //Removes last state
 	void changeState(GameState* state); //Replaces current state
 

@@ -16,7 +16,7 @@ void Paddle::handleInput(sf::Event& event)
 
 }
 
-void Paddle::collides(Entity& entity, bool side)
+void Paddle::collides(Entity& entity, int side)
 {
 
 }
@@ -28,6 +28,7 @@ Paddle::Paddle(Level* level, float yp, float width)
 
 	setTexture(TextureManager::getRef("1x1"));
 	setScale(width, 8);
+	setColor(sf::Color(255, 255, 255, 255));
 	setPosition((APP_WIDTH-getWidth())/2, yp);
 
 }

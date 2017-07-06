@@ -10,7 +10,7 @@ class Ball : public Entity
 public:
 	virtual void update(const float dt);
 	virtual void handleInput(sf::Event& event);
-	virtual void collides(Entity& entity, bool side);
+	virtual void collides(Entity& entity, int side);
 
 	Ball(Level* level);
 

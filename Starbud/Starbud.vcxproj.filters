@@ -131,5 +131,6 @@
     <Font Include="res\fonts\Audiowide-Regular.ttf" />
     <Font Include="res\fonts\PixelSplitter-Bold.ttf" />
     <Font Include="res\fonts\RosesareFF0000.ttf" />
+    <Font Include="res\fonts\homespun.ttf" />
   </ItemGroup>
 </Project>

@@ -14,6 +14,8 @@ public:
 	void selectDown(); //Move selector down
 	void selectUp(); //Move selector up
 
+	void handleInput(sf::Event& event);
+
 	void draw(const float dt); //Draw menu items
 
 	TextMenu(Game* game, sf::Color& off, sf::Color& on);
@@ -27,5 +29,6 @@ private:
 
 public:
 	int selected;
+	bool action;
 
 };

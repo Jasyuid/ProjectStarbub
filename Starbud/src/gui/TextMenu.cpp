@@ -8,15 +8,40 @@ void TextMenu::addItem(sf::Text& text)
 void TextMenu::selectDown()
 {
 	selected++;
-	if (selected >= textItems.size()) selected = textItems.size() - 1;
+	if (selected >= textItems.size()) 
+	{
+		selected = textItems.size() - 1;
+		return;
+	}
 	select.play();
 }
 
 void TextMenu::selectUp()
 {
 	selected--;
-	if (selected < 0) selected = 0;
+	if (selected < 0) 
+	{
+		selected = 0;
+		return;
+	}
 	select.play();
+}
+
+void TextMenu::handleInput(sf::Event& event)
+{
+	switch (event.key.code)
+	{
+	case sf::Keyboard::Up:
+		selectUp();
+		break;
+	case sf::Keyboard::Down:
+		selectDown();
+		break;
+	case sf::Keyboard::Return:
+		select.play();
+		action = true;
+		break;
+	}
 }
 
 void TextMenu::draw(const float dt)
@@ -38,4 +63,5 @@ TextMenu::TextMenu(Game* game, sf::Color& off, sf::Color& on)
 	select = SoundManager::getSoundRef("select");
 
 	selected = 0;
+	action = false;
 }

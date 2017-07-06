@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\fonts\Audiowide-Regular.ttf" />
+    <Font Include="res\fonts\homespun.ttf" />
     <Font Include="res\fonts\PixelSplitter-Bold.ttf" />
     <Font Include="res\fonts\RosesareFF0000.ttf" />
   </ItemGroup>
